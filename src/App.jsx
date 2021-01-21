@@ -1,22 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import Home from "./components/Home";
+import Cabinets from "./components/Cabinets";
 import styled from "styled-components";
-import hero from "./assets/hero.jpeg";
-import pic from "./assets/picture3.jpg";
-import mobile from "./assets/picture3_mobile.jpg";
-
-const Image = styled.img`
-  width: 100%;
-  height: 90vh;
-  background-image: url(${pic});
-  background-size: cover;
-  background-attachment: fixed;
-  @media screen and (max-width: 600px) {
-    height: 60vh;
-    background-image: url(${mobile});
-    background-size: contain;
-  }
-`;
 
 const Div = styled.div`
   display: flex;
@@ -25,12 +10,24 @@ const Div = styled.div`
 `;
 
 function App() {
-  return (
-    <Div>
-      <Image id="App" />
-      <Home />
-    </Div>
-  );
+  const [view, setView] = useState("HOME");
+
+  const changeView = (newView) => {
+    setView(newView);
+  };
+
+  const handleView = () => {
+    switch (view) {
+      case "HOME":
+        return <Home ChangeView={changeView} />;
+      case "CABINETS":
+        return <Cabinets ChangeView={changeView} />;
+      default:
+        return <Home ChangeView={changeView} />;
+    }
+  };
+
+  return <Div>{handleView()}</Div>;
 }
 
 export default App;
