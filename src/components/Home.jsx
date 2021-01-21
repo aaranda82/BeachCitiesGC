@@ -2,19 +2,17 @@ import React from "react";
 import styled from "styled-components";
 import Menu from "./Menu";
 import hero from "../assets/hero.jpeg";
-import pic from "../assets/picture3.jpg";
-import mobile from "../assets/picture3_mobile.jpg";
+import heroMobile from "../assets/hero_mobile.jpg";
 import PropTypes from "prop-types";
 
 const Image = styled.img`
   width: 100%;
   height: 90vh;
-  background-image: url(${pic});
+  background-image: url(${hero});
   background-size: cover;
   background-attachment: fixed;
   @media screen and (max-width: 600px) {
-    height: 60vh;
-    background-image: url(${mobile});
+    background-image: url(${heroMobile});
     background-size: contain;
   }
 `;
@@ -79,34 +77,26 @@ const Par = styled.p`
   }
 `;
 
-const Sub = styled.div`
-  font-size: 12px;
-`;
-
-const Home = () => {
+const Home = ({ changeView }) => {
   return (
     <>
       <Image id="App" />
       <Container>
         <Shadow />
-        <CompanyName>
-          Beach Cities General Construction<Sub>WE GOT WOOD</Sub>
-        </CompanyName>
-        <Menu />
+        <CompanyName onClick={() => changeView("HOME")}>Beach Cities General Construction</CompanyName>
+        <Menu changeView={changeView} />
         <About id="about">
           <Div>
             <h2>About</h2>
           </Div>
           <Par>
-            At Beach Cities General Construction cabinets give us wood. We will work hard to satisfy your needs. Our
-            team will bend over forwards to provide excellent service. Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit. Nam fringilla eget mi nec mattis. Etiam nec porttitor justo. Proin congue elementum
-            maximus. Cras blandit nulla libero, id lobortis leo hendrerit et. Pellentesque pulvinar molestie velit ac
-            dignissim. Cras eget semper metus. Integer tristique urna eros, vitae molestie lorem varius ac. Integer
-            rhoncus lorem urna, nec efficitur dui volutpat quis. Aenean suscipit et diam vel mollis. Praesent mollis
-            purus eros. Phasellus eu dolor fermentum, gravida diam a, fermentum metus. Curabitur lobortis vestibulum
-            malesuada. Praesent accumsan euismod arcu vel laoreet. Etiam vehicula arcu neque, sed egestas lorem varius
-            nec.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla eget mi nec mattis. Etiam nec
+            porttitor justo. Proin congue elementum maximus. Cras blandit nulla libero, id lobortis leo hendrerit et.
+            Pellentesque pulvinar molestie velit ac dignissim. Cras eget semper metus. Integer tristique urna eros,
+            vitae molestie lorem varius ac. Integer rhoncus lorem urna, nec efficitur dui volutpat quis. Aenean suscipit
+            et diam vel mollis. Praesent mollis purus eros. Phasellus eu dolor fermentum, gravida diam a, fermentum
+            metus. Curabitur lobortis vestibulum malesuada. Praesent accumsan euismod arcu vel laoreet. Etiam vehicula
+            arcu neque, sed egestas lorem varius nec.
           </Par>
         </About>
       </Container>

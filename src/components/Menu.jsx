@@ -26,16 +26,20 @@ const Item = styled.a`
   }
 `;
 
-const Menu = () => {
+const Menu = ({ changeView }) => {
   return (
     <Container>
       <Item href="#about">ABOUT</Item>
-      <Item>CABINETS</Item>
+      <Item onClick={() => changeView("CABINETS")}>CABINETS</Item>
       <Item>DRAWERS</Item>
       <Item>PULLS</Item>
       <Item>CONTACT</Item>
     </Container>
   );
+};
+
+Menu.propTypes = {
+  changeView: PropTypes.func,
 };
 
 export default Menu;
