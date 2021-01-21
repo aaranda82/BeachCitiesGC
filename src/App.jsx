@@ -12,18 +12,18 @@ const Div = styled.div`
 function App() {
   const [view, setView] = useState("HOME");
 
-  const changeView = (newView) => {
+  function changeView(newView) {
     setView(newView);
-  };
+  }
 
   const handleView = () => {
     switch (view) {
       case "HOME":
-        return <Home ChangeView={changeView} />;
+        return <Home changeView={changeView} />;
       case "CABINETS":
-        return <Cabinets ChangeView={changeView} />;
+        return <Cabinets changeView={changeView} />;
       default:
-        return <Home ChangeView={changeView} />;
+        return <Home changeView={changeView} />;
     }
   };
 
