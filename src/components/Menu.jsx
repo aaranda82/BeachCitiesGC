@@ -1,14 +1,15 @@
 import React from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 const Container = styled.div`
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   width: 100%;
   height: 50px;
   margin: 10px 0;
   position: sticky;
-  top: 0;
 `;
 
 const Item = styled.a`
@@ -20,6 +21,9 @@ const Item = styled.a`
   &:hover {
     font-weight: 900;
   }
+  @media screen and (max-width: 600px) {
+    width: 30%;
+  }
 `;
 
 const Menu = () => {
@@ -29,7 +33,7 @@ const Menu = () => {
       <Item>CABINETS</Item>
       <Item>DRAWERS</Item>
       <Item>PULLS</Item>
-      <Item>Contact</Item>
+      <Item>CONTACT</Item>
     </Container>
   );
 };
