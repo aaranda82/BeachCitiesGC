@@ -1,6 +1,10 @@
-import React, { useState } from "react";
-import Home from "./components/Home";
-import Cabinets from "./components/Cabinets";
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
+import Home from "./routes/Home";
+import Kitchen from "./routes/Kitchen";
+import Bathroom from "./routes/Bathroom";
+import Contact from "./routes/Contact";
 import styled from "styled-components";
 
 const Div = styled.div`
@@ -10,24 +14,18 @@ const Div = styled.div`
 `;
 
 function App() {
-  const [view, setView] = useState("HOME");
-
-  function changeView(newView) {
-    setView(newView);
-  }
-
-  const handleView = () => {
-    switch (view) {
-      case "HOME":
-        return <Home changeView={changeView} />;
-      case "CABINETS":
-        return <Cabinets changeView={changeView} />;
-      default:
-        return <Home changeView={changeView} />;
-    }
-  };
-
-  return <Div>{handleView()}</Div>;
+  return (
+    <Div id="App">
+      <Router>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/kitchen" component={Kitchen} />
+          <Route path="/bathroom" component={Bathroom} />
+          <Route path="/contact" component={Contact} />
+        </Switch>
+      </Router>
+    </Div>
+  );
 }
 
 export default App;
