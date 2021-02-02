@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
   display: flex;
@@ -26,20 +26,15 @@ const Item = styled.a`
   }
 `;
 
-const Menu = ({ changeView }) => {
+const Menu = () => {
   return (
     <Container>
       <Item href="#about">ABOUT</Item>
-      <Item onClick={() => changeView("CABINETS")}>CABINETS</Item>
-      <Item>DRAWERS</Item>
-      <Item>PULLS</Item>
-      <Item>CONTACT</Item>
+      <Link to="/kitchen">KITCHEN</Link>
+      <Link to="/bathroom">BATHROOM</Link>
+      <Link to="/contact">CONTACT</Link>
     </Container>
   );
-};
-
-Menu.propTypes = {
-  changeView: PropTypes.func,
 };
 
 export default Menu;
