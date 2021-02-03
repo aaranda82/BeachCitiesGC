@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Link, useLocation } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 const Container = styled.div`
   display: flex;
@@ -28,19 +28,43 @@ const Item = styled.a`
 
 const Menu = () => {
   const location = useLocation();
-  const handleAbout = () => {
-    return location.pathname === "/" ? (
-      <Item href="#about">ABOUT</Item>
-    ) : (
-      <Link to="/">ABOUT</Link>
+
+  const handleNavLinks = (text: string) => {
+    return (
+      <NavLink
+        exact
+        to={`/${text === "about" ? "" : text}`}
+        activeStyle={{
+          fontWeight: "bold",
+          color: "red",
+        }}
+        style={{ textDecoration: "none", color: "black" }}>
+        {text.toUpperCase()}
+      </NavLink>
     );
   };
+
+  const handleAbout = () => {
+    return location.pathname === "/" ? (
+      <Item
+        href="#about"
+        style={{
+          fontWeight: "bold",
+          color: "red",
+        }}>
+        ABOUT
+      </Item>
+    ) : (
+      handleNavLinks("about")
+    );
+  };
+
   return (
     <Container>
       {handleAbout()}
-      <Link to="/kitchen">KITCHEN</Link>
-      <Link to="/bathroom">BATHROOM</Link>
-      <Link to="/contact">CONTACT</Link>
+      {handleNavLinks("kitchen")}
+      {handleNavLinks("bathroom")}
+      {handleNavLinks("contact")}
     </Container>
   );
 };
