@@ -1,12 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import Menu from "../components/Menu";
-import { Image } from "../components/Image";
 
 const Container = styled.div`
   text-align: center;
   height: 370px;
-  width: 80%;
   background-color: white;
   position: relative;
   display: flex;
@@ -65,32 +63,28 @@ const Par = styled.p`
 
 const Home = () => {
   return (
-    <>
-      <Image />
-      <Container id="App">
-        <Shadow />
-        <CompanyName>Beach Cities General Construction</CompanyName>
-        <Menu />
-        <About id="about">
-          <Div>
-            <h2>About</h2>
-          </Div>
-          <Par>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
-            fringilla eget mi nec mattis. Etiam nec porttitor justo. Proin
-            congue elementum maximus. Cras blandit nulla libero, id lobortis leo
-            hendrerit et. Pellentesque pulvinar molestie velit ac dignissim.
-            Cras eget semper metus. Integer tristique urna eros, vitae molestie
-            lorem varius ac. Integer rhoncus lorem urna, nec efficitur dui
-            volutpat quis. Aenean suscipit et diam vel mollis. Praesent mollis
-            purus eros. Phasellus eu dolor fermentum, gravida diam a, fermentum
-            metus. Curabitur lobortis vestibulum malesuada. Praesent accumsan
-            euismod arcu vel laoreet. Etiam vehicula arcu neque, sed egestas
-            lorem varius nec.
-          </Par>
-        </About>
-      </Container>
-    </>
+    <Container id="App">
+      <Shadow />
+      <CompanyName>Beach Cities General Construction</CompanyName>
+      <Menu />
+      <About id="about">
+        <Div>
+          <h2>About</h2>
+        </Div>
+        <Par>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla
+          eget mi nec mattis. Etiam nec porttitor justo. Proin congue elementum
+          maximus. Cras blandit nulla libero, id lobortis leo hendrerit et.
+          Pellentesque pulvinar molestie velit ac dignissim. Cras eget semper
+          metus. Integer tristique urna eros, vitae molestie lorem varius ac.
+          Integer rhoncus lorem urna, nec efficitur dui volutpat quis. Aenean
+          suscipit et diam vel mollis. Praesent mollis purus eros. Phasellus eu
+          dolor fermentum, gravida diam a, fermentum metus. Curabitur lobortis
+          vestibulum malesuada. Praesent accumsan euismod arcu vel laoreet.
+          Etiam vehicula arcu neque, sed egestas lorem varius nec.
+        </Par>
+      </About>
+    </Container>
   );
 };
 
