@@ -1,11 +1,8 @@
 import React from "react";
+import Title from "../components/Title";
 
 const Bathroom = () => {
-  return (
-    <>
-      <h1>BATHROOM</h1>
-    </>
-  );
+  return <Title text="bathroom" />;
 };
 
 export default Bathroom;
