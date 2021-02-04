@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import Menu from "../components/Menu";
 
 const Container = styled.div`
   text-align: center;
@@ -10,27 +9,6 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-`;
-
-const CompanyName = styled.h1`
-  position: absolute;
-  bottom: 370px;
-  padding: 5px 10px;
-`;
-
-const Shadow = styled.h1`
-  position: absolute;
-  bottom: 370px;
-  padding: 5px 10px;
-  border-radius: 10px;
-  background-color: grey;
-  opacity: 0.6;
-  height: 55px;
-  width: 510px;
-  @media screen and (max-width: 600px) {
-    height: 140px;
-    width: 225px;
-  }
 `;
 
 const About = styled.div`
@@ -64,9 +42,6 @@ const Par = styled.p`
 const Home = () => {
   return (
     <Container id="App">
-      <Shadow />
-      <CompanyName>Beach Cities General Construction</CompanyName>
-      <Menu />
       <About id="about">
         <Div>
           <h2>About</h2>

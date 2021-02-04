@@ -1,28 +1,45 @@
 import React from "react";
 import styled from "styled-components";
 import { NavLink, useLocation } from "react-router-dom";
+import { colorScheme } from "../colorScheme";
+
+const { independence, terraCotta } = colorScheme;
 
 const Container = styled.div`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   width: 100%;
-  height: 50px;
+  height: auto;
   margin: 10px 0;
   position: sticky;
 `;
 
-const Item = styled.a`
+const Item = styled.div`
   width: 15%;
   border: none;
   cursor: pointer;
+  text-align: center;
   text-decoration: none;
-  color: black;
+  color: ${independence};
   &:hover {
-    font-weight: 900;
+    font-weight: bold;
   }
-  @media screen and (max-width: 600px) {
-    width: 30%;
+  @media screen and (max-width: 500px) {
+    width: 100%;
+  }
+`;
+
+const About = styled.a`
+  width: 15%;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  color: ${terraCotta};
+  font-weight: bold;
+  @media screen and (max-width: 500px) {
+    width: 100%;
   }
 `;
 
@@ -31,29 +48,24 @@ const Menu = () => {
 
   const handleNavLinks = (text: string) => {
     return (
-      <NavLink
-        exact
-        to={`/${text === "about" ? "" : text}`}
-        activeStyle={{
-          fontWeight: "bold",
-          color: "red",
-        }}
-        style={{ textDecoration: "none", color: "black" }}>
-        {text.toUpperCase()}
-      </NavLink>
+      <Item>
+        <NavLink
+          exact
+          to={`/${text === "about" ? "" : text}`}
+          activeStyle={{
+            fontWeight: "bold",
+            color: terraCotta,
+          }}
+          style={{ textDecoration: "none", color: independence }}>
+          {text.toUpperCase()}
+        </NavLink>
+      </Item>
     );
   };
 
   const handleAbout = () => {
     return location.pathname === "/" ? (
-      <Item
-        href="#about"
-        style={{
-          fontWeight: "bold",
-          color: "red",
-        }}>
-        ABOUT
-      </Item>
+      <About href="#about">ABOUT</About>
     ) : (
       handleNavLinks("about")
     );
@@ -65,6 +77,7 @@ const Menu = () => {
       {handleNavLinks("kitchen")}
       {handleNavLinks("bathroom")}
       {handleNavLinks("contact")}
+      {handleNavLinks("docs")}
     </Container>
   );
 };
