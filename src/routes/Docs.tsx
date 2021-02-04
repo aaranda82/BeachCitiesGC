@@ -1,11 +1,8 @@
 import React from "react";
+import Title from "../components/Title";
 
 const Docs = () => {
-  return (
-    <>
-      <h1>DOCS</h1>
-    </>
-  );
+  return <Title text="docs" />;
 };
 
 export default Docs;

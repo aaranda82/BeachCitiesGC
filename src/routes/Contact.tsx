@@ -1,7 +1,8 @@
 import React from "react";
+import Title from "../components/Title";
 
 const Contact = () => {
-  return <h1>CONTACT</h1>;
+  return <Title text="contact us" />;
 };
 
 export default Contact;

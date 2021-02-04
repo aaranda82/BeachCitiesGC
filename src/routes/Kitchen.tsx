@@ -1,11 +1,8 @@
 import React from "react";
+import Title from "../components/Title";
 
 const Kitchen = () => {
-  return (
-    <>
-      <h1>KITCHEN</h1>
-    </>
-  );
+  return <Title text="kitchen" />;
 };
 
 export default Kitchen;
