@@ -5,17 +5,20 @@ import { Container } from "../styledComponents";
 
 const Info = styled.div`
   width: 100%;
-  font-size: 30px;
+  font-size: 25px;
   margin: 20px;
 `;
 
 const Contact = () => {
   return (
-    <Container>
+    <>
       <Title text="contact us" />
-      <Info>Bobby Aranda</Info>
-      <Info>Lic# 1068671</Info>
-    </Container>
+      <Container>
+        <Info>Bobby Aranda</Info>
+        <Info>Email Address coming soon</Info>
+        <Info>Phone number coming soon</Info>
+      </Container>
+    </>
   );
 };
 

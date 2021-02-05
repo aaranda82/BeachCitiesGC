@@ -17,6 +17,8 @@ export const Div = styled.div`
 `;
 
 export const Container = styled.div`
+  width: 100%;
+  min-height: 35vh;
   border-radius: 10px;
   background-color: ${colorScheme.deepChampagne};
   text-align: center;

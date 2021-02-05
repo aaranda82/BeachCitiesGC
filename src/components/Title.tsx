@@ -5,7 +5,7 @@ import { colorScheme } from "../colorScheme";
 const TitleDiv = styled.h1`
   width: 100%;
   text-align: center;
-  color: ${colorScheme.terraCotta};
+  color: ${colorScheme.independence};
 `;
 
 const Title = ({ text }: { text: string }) => {
