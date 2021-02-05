@@ -7,6 +7,7 @@ import { Div, Container, Paragraph } from "../styledComponents";
 const Image = styled.img`
   height: 300px;
   width: 450px;
+  border-radius: 10px;
   @media screen and (max-width: 500px) {
     height: 250px;
     width: 375px;
