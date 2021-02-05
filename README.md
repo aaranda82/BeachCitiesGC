@@ -1,6 +1,8 @@
-# Getting Started with Create React App
+# Beach Cities General Construction
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React/TypeScript website for a general construction business.
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f077c0be-10c1-4021-826d-17586d355f76/deploy-status)](https://app.netlify.com/sites/quirky-chandrasekhar-f25de2/deploys)
 
 ## Available Scripts
 
