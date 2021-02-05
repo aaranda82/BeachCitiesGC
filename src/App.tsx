@@ -10,14 +10,21 @@ import styled from "styled-components";
 import { Image } from "./components/Image";
 import Menu from "./components/Menu";
 import Hamburger from "./components/Hamburger";
+import Footer from "./components/Footer";
 import ScrollToTop from "./components/Scroll";
 import { colorScheme } from "./colorScheme";
 
 const Title = styled.h1<{ top: boolean }>`
-  width: 100%;
+  width: auto;
   text-align: center;
   position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
   top: ${(props) => (props.top ? "65vh" : "10vh")};
+  background-color: ${colorScheme.greenSheen};
+  box-shadow: 5px 5px 5px grey;
+  border-radius: 15px;
+  padding: 10px;
   @media screen and (max-width: 500px) {
     color: ${colorScheme.eggshell};
   }
@@ -50,7 +57,7 @@ function App() {
       <ScrollToTop />
       <Image />
       <Title top={location.pathname === "/"}>
-        Beach Cities General Construction
+        Beach Cities General Construction, inc.
       </Title>
       <Container id="App">
         <Div>
@@ -65,6 +72,7 @@ function App() {
             <Route path="/contact" component={Contact} />
             <Route path="/docs" component={Docs} />
           </Switch>
+          <Footer />
         </Div>
       </Container>
     </>
